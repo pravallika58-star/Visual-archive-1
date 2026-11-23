@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julian Vance | Fine Art & Editorial Photography</title>
+    <!-- Tailwind CSS for responsive utility-first styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display for editorial elegance & Inter for crisp readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome for clean iconography -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        stone: {
+                            850: '#1f1e1c',
+                            925: '#141312',
+                            950: '#0c0b0a',
+                        },
+                        amber: {
+                            350: '#f5c767',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-stone-950 text-stone-200 font-sans antialiased selection:bg-amber-400 selection:text-stone-950 overflow-x-hidden">
+
+    <!-- ==================== NAVIGATION HEADER ==================== -->
+    <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-stone-950/80 backdrop-blur-md border-b border-stone-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <span class="w-10 h-10 rounded-full border border-amber-400/50 flex items-center justify-center text-amber-400 group-hover:bg-amber-400 group-hover:text-stone-950 transition-colors">
+                        <i class="fa-solid fa-aperture text-lg"></i>
+                    </span>
+                    <div>
+                        <span class="font-serif text-xl tracking-wide text-stone-100 block leading-none">Julian Vance</span>
+                        <span class="text-[10px] uppercase tracking-[0.25em] text-stone-400 block mt-1">Visual Storyteller</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-300">
+                    <a href="#about" class="hover:text-amber-400 transition-colors py-2">About</a>
+                    <a href="#gallery" class="hover:text-amber-400 transition-colors py-2">Portfolio</a>
+                    <a href="#services" class="hover:text-amber-400 transition-colors py-2">Services</a>
+                    <a href="#packages" class="hover:text-amber-400 transition-colors py-2">Packages</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-amber-400 text-stone-950 font-semibold hover:bg-amber-300 transition-all shadow-lg shadow-amber-400/10">
+                        Book a Session
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button id="mobile-menu-btn" aria-label="Toggle Menu" class="md:hidden p-3 rounded-xl text-stone-300 hover:text-white hover:bg-stone-800 transition-colors">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-900 border-b border-stone-800 px-4 pt-2 pb-6 space-y-2">
+            <a href="#about" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-stone-200 hover:bg-stone-800 hover:text-amber-400">About Photographer</a>
+            <a href="#gallery" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-stone-200 hover:bg-stone-800 hover:text-amber-400">Image Gallery</a>
+            <a href="#services" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-stone-200 hover:bg-stone-800 hover:text-amber-400">Services</a>
+            <a href="#packages" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-stone-200 hover:bg-stone-800 hover:text-amber-400">Packages & Pricing</a>
+            <a href="#contact" class="mobile-link block px-4 py-3 mt-2 rounded-xl text-center font-semibold bg-amber-400 text-stone-950">Inquire Now</a>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Full-bleed Atmospheric Background Image with Fallback -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=2000&q=80" 
+                 onerror="this.src='https://placehold.co/1920x1080/1c1917/d6d3d1?text=Dramatic+Landscape+Photography'"
+                 alt="Photographer silhouetted against misty mountains at golden hour" 
+                 class="w-full h-full object-cover object-center opacity-45 scale-105 transition-transform duration-1000">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/60 to-stone-950/40"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-stone-900/80 border border-stone-700/70 text-amber-400 text-xs uppercase tracking-[0.25em] mb-6 backdrop-blur-sm">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+                Available Worldwide • 2026 Bookings Open
+            </p>
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-normal tracking-tight text-stone-50 leading-[1.12] mb-6">
+                Capturing Timeless Light &amp; <span class="italic text-amber-350">Unscripted</span> Emotion.
+            </h1>
+            <p class="max-w-2xl mx-auto text-base sm:text-lg text-stone-300 font-light leading-relaxed mb-10">
+                Editorial portraiture, intimate destination weddings, and architectural storytelling crafted with medium-format precision and poetic natural light.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#gallery" class="w-full sm:w-auto px-8 py-4 rounded-full bg-amber-400 text-stone-950 font-semibold text-sm tracking-wide hover:bg-amber-300 transition-all shadow-xl shadow-amber-400/15">
+                    Explore Selected Works
+                </a>
+                <a href="#packages" class="w-full sm:w-auto px-8 py-4 rounded-full bg-stone-900/80 border border-stone-700 text-stone-100 font-medium text-sm tracking-wide hover:bg-stone-800 hover:border-stone-600 transition-all backdrop-blur-sm">
+                    View Investment &amp; Packages
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <a href="#about" aria-label="Scroll down to About section" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-stone-400 hover:text-amber-400 transition-colors animate-bounce p-2">
+            <i class="fa-solid fa-arrow-down-long text-lg"></i>
+        </a>
+    </section>
+
+    <!-- ==================== PHOTOGRAPHER INTRODUCTION ==================== -->
+    <section id="about" class="py-24 sm:py-32 bg-stone-950 border-t border-stone-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Photographer Portrait Column -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-stone-800 aspect-[4/5]">
+                        <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?auto=format&fit=crop&w=900&q=80" 
+                             onerror="this.src='https://placehold.co/800x1000/292524/e7e5e4?text=Julian+Vance+Portrait'"
+                             alt="Photographer Julian Vance holding a vintage rangefinder camera" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-stone-900/85 backdrop-blur-md border border-stone-700/60">
+                            <p class="font-serif italic text-stone-200 text-sm">
+                                "A photograph shouldn't merely show what a moment looked like—it should preserve how it felt to stand there."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Biography & Philosophy Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-block text-xs uppercase tracking-[0.25em] text-amber-400 font-semibold">
+                        The Photographer
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-stone-100 leading-tight">
+                        Hello, I’m Julian Vance—observer of fleeting shadows and human connection.
+                    </h2>
+                    <p class="text-stone-300 text-base sm:text-lg leading-relaxed font-light">
+                        With over nine years behind the lens across Kyoto, Amalfi, and the Pacific Northwest, my approach blends documentary candor with fine-art composition. Rather than rigid posing, I guide clients into natural environments where genuine warmth unfolds effortlessly.
+                    </p>
+                    <p class="text-stone-400 text-base leading-relaxed font-light">
+                        Whether photographing an intimate elopement at dawn, an editorial lookbook for independent designers, or an architectural monograph, every frame is individually color-graded to evoke tactile film grain and enduring depth.
+                    </p>
+
+                    <!-- Credentials & Milestones -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-stone-800/80">
+                        <div class="p-4 rounded-2xl bg-stone-900/50 border border-stone-800/60">
+                            <span class="font-serif text-2xl sm:text-3xl text-amber-400 block">9+</span>
+                            <span class="text-xs sm:text-sm text-stone-400 mt-1 block">Years Experience</span>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-stone-900/50 border border-stone-800/60">
+                            <span class="font-serif text-2xl sm:text-3xl text-amber-400 block">240+</span>
+                            <span class="text-xs sm:text-sm text-stone-400 mt-1 block">Stories Captured</span>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-stone-900/50 border border-stone-800/60">
+                            <span class="font-serif text-2xl sm:text-3xl text-amber-400 block">14</span>
+                            <span class="text-xs sm:text-sm text-stone-400 mt-1 block">Editorial Features</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== IMAGE GALLERY SECTION ==================== -->
+    <section id="gallery" class="py-24 sm:py-32 bg-stone-925 border-t border-stone-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header & Category Filter Controls -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.25em] text-amber-400 font-semibold block mb-3">Curated Archive</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-stone-100">Selected Works</h2>
+                </div>
+
+                <!-- Filter Pills -->
+                <div class="flex flex-wrap gap-2" role="tablist" aria-label="Gallery Categories">
+                    <button data-filter="all" class="filter-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-amber-400 text-stone-950">
+                        All Works
+                    </button>
+                    <button data-filter="portraits" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-stone-900 text-stone-300 hover:bg-stone-800 border border-stone-800">
+                        Portraits
+                    </button>
+                    <button data-filter="weddings" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-stone-900 text-stone-300 hover:bg-stone-800 border border-stone-800">
+                        Weddings
+                    </button>
+                    <button data-filter="landscapes" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-stone-900 text-stone-300 hover:bg-stone-800 border border-stone-800">
+                        Landscapes
+                    </button>
+                    <button data-filter="architecture" class="filter-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all bg-stone-900 text-stone-300 hover:bg-stone-800 border border-stone-800">
+                        Architecture
+                    </button>
+                </div>
+            </div>
+
+            <!-- Responsive Portfolio Grid -->
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Gallery Item 1 -->
+                <article data-category="portraits" class="gallery-item group relative rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 aspect-[4/5] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" 
+                         onerror="this.src='https://placehold.co/800x1000/1c1917/a8a29e?text=Editorial+Portrait'"
+                         alt="Golden hour studio portrait with warm natural shadows" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-xs uppercase tracking-widest text-amber-400 mb-1">Portraits</span>
+                        <h3 class="font-serif text-xl text-white">Solstice in Milan</h3>
+                        <p class="text-xs text-stone-300 mt-1">85mm f/1.4 • Natural Window Light</p>
+                    </div>
+                </article>
+
+                <!-- Gallery Item 2 -->
+                <article data-category="weddings" class="gallery-item group relative rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 aspect-[4/5] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" 
+                         onerror="this.src='https://placehold.co/800x1000/1c1917/a8a29e?text=Wedding+Vows'"
+                         alt="Couple walking along misty coastal cliffs during wedding" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-xs uppercase tracking-widest text-amber-400 mb-1">Weddings</span>
+                        <h3 class="font-serif text-xl text-white">Elena &amp; Marcus — Big Sur</h3>
+                        <p class="text-xs text-stone-300 mt-1">35mm f/1.4 • Coastal Elopement</p>
+                    </div>
+                </article>
+
+                <!-- Gallery Item 3 -->
+                <article data-category="landscapes" class="gallery-item group relative rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 aspect-[4/5] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" 
+                         onerror="this.src='https://placehold.co/800x1000/1c1917/a8a29e?text=Alpine+Valley'"
+                         alt="Yosemite valley bathed in late afternoon amber sunbeams" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-xs uppercase tracking-widest text-amber-400 mb-1">Landscapes</span>
+                        <h3 class="font-serif text-xl text-white">Cathedral Valley Dusk</h3>
+                        <p class="text-xs text-stone-300 mt-1">24mm Tilt-Shift • Medium Format</p>
+                    </div>
+                </article>
+
+                <!-- Gallery Item 4 -->
+                <article data-category="architecture" class="gallery-item group relative rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 aspect-[4/5] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" 
+                         onerror="this.src='https://placehold.co/800x1000/1c1917/a8a29e?text=Minimalist+Architecture'"
+                         alt="Minimalist concrete and timber interior flooded with geometric sunlight" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-xs uppercase tracking-widest text-amber-400 mb-1">Architecture</span>
+                        <h3 class="font-serif text-xl text-white">Casa Brutale Monograph</h3>
+                        <p class="text-xs text-stone-300 mt-1">50mm • Architectural Digest Series</p>
+                    </div>
+                </article>
+
+                <!-- Gallery Item 5 -->
+                <article data-category="portraits" class="gallery-item group relative rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 aspect-[4/5] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" 
+                         onerror="this.src='https://placehold.co/800x1000/1c1917/a8a29e?text=Monochrome+Portrait'"
+                         alt="Expressive monochrome portrait with dramatic side lighting" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-xs uppercase tracking-widest text-amber-400 mb-1">Portraits</span>
+                        <h3 class="font-serif text-xl text-white">The Composer’s Study</h3>
+                        <p class="text-xs text-stone-300 mt-1">105mm f/2 • Silver Gelatin Profile</p>
+                    </div>
+                </article>
+
+                <!-- Gallery Item 6 -->
+                <article data-category="weddings" class="gallery-item group relative rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 aspect-[4/5] cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" 
+                         onerror="this.src='https://placehold.co/800x1000/1c1917/a8a29e?text=Reception+Candlelight'"
+                         alt="Intimate candlelit outdoor wedding reception under olive trees" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-xs uppercase tracking-widest text-amber-400 mb-1">Weddings</span>
+                        <h3 class="font-serif text-xl text-white">Twilight in Tuscany</h3>
+                        <p class="text-xs text-stone-300 mt-1">50mm f/1.2 • Ambient Candlelight</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PHOTOGRAPHY SERVICES ==================== -->
+    <section id="services" class="py-24 sm:py-32 bg-stone-950 border-t border-stone-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] text-amber-400 font-semibold block mb-3">What I Offer</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-stone-100 mb-4">Bespoke Photography Services</h2>
+                <p class="text-stone-400 font-light text-base sm:text-lg">
+                    Tailored visual production from creative direction and location scouting to archival museum-grade prints.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service Card 1 -->
+                <div class="p-8 rounded-3xl bg-stone-900/60 border border-stone-800/80 hover:border-amber-400/50 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-stone-800 text-amber-400 flex items-center justify-center mb-6 group-hover:bg-amber-400 group-hover:text-stone-950 transition-colors">
+                        <i class="fa-solid fa-rings-wedding text-xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-stone-100 mb-3">Weddings &amp; Elopements</h3>
+                    <p class="text-sm text-stone-400 leading-relaxed">
+                        Unobtrusive documentary storytelling for intimate destination weddings, multi-day celebrations, and wild landscape elopements.
+                    </p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="p-8 rounded-3xl bg-stone-900/60 border border-stone-800/80 hover:border-amber-400/50 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-stone-800 text-amber-400 flex items-center justify-center mb-6 group-hover:bg-amber-400 group-hover:text-stone-950 transition-colors">
+                        <i class="fa-solid fa-user-astronaut text-xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-stone-100 mb-3">Editorial Portraiture</h3>
+                    <p class="text-sm text-stone-400 leading-relaxed">
+                        Expressive individual portraits, artist press kits, and founder branding sessions crafted in natural light or studio setups.
+                    </p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="p-8 rounded-3xl bg-stone-900/60 border border-stone-800/80 hover:border-amber-400/50 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-stone-800 text-amber-400 flex items-center justify-center mb-6 group-hover:bg-amber-400 group-hover:text-stone-950 transition-colors">
+                        <i class="fa-solid fa-compass-drafting text-xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-stone-100 mb-3">Architecture &amp; Interiors</h3>
+                    <p class="text-sm text-stone-400 leading-relaxed">
+                        Perspective-corrected architectural documentation for boutique hotels, interior designers, and hospitality publications.
+                    </p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="p-8 rounded-3xl bg-stone-900/60 border border-stone-800/80 hover:border-amber-400/50 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-stone-800 text-amber-400 flex items-center justify-center mb-6 group-hover:bg-amber-400 group-hover:text-stone-950 transition-colors">
+                        <i class="fa-solid fa-film text-xl"></i>
+                    </div>
+                    <h3 class="font-serif text-xl text-stone-100 mb-3">Fine Art Prints</h3>
+                    <p class="text-sm text-stone-400 leading-relaxed">
+                        Limited-edition signed archival pigment prints on Hahnemühle cotton rag paper, custom framed for private collections.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PACKAGES & PRICING ==================== -->
+    <section id="packages" class="py-24 sm:py-32 bg-stone-925 border-t border-stone-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-[0.25em] text-amber-400 font-semibold block mb-3">Investment</span>
+                <h2 class="font-serif text-3xl sm:text-5xl text-stone-100 mb-4">Curated Session Packages</h2>
+                <p class="text-stone-400 font-light text-base sm:text-lg">
+                    Transparent collections designed to fit personal portraits, commercial campaigns, and full-day celebrations. Custom travel quotes available.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Package 1: Essential Portrait -->
+                <div class="flex flex-col justify-between p-8 sm:p-10 rounded-3xl bg-stone-900/80 border border-stone-800">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-stone-400 font-medium">Collection I</span>
+                        <h3 class="font-serif text-2xl text-stone-100 mt-2">The Portrait Study</h3>
+                        <div class="mt-4 flex items-baseline gap-2">
+                            <span class="font-serif text-4xl text-stone-50">$650</span>
+                            <span class="text-sm text-stone-400">/ session</span>
+                        </div>
+                        <p class="text-sm text-stone-400 mt-4 pb-6 border-b border-stone-800">
+                            Ideal for creatives, couples, editorial lookbooks, and personal branding.
+                        </p>
+                        <ul class="mt-6 space-y-4 text-sm text-stone-300">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
+                                <span>2 hours on-location or natural-light studio</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
+                                <span>2 wardrobe changes &amp; creative direction</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
+                                <span>45 high-resolution hand-retouched images</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
+                                <span>Private online gallery with print release</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#contact" data-package="The Portrait Study ($650)" class="select-package-btn mt-8 block w-full py-3.5 px-6 rounded-full text-center text-sm font-semibold border border-stone-700 text-stone-100 hover:bg-stone-800 transition-colors">
+                        Select Portrait Study
+                    </a>
+                </div>
+
+                <!-- Package 2: Signature Editorial (Featured) -->
+                <div class="flex flex-col justify-between p-8 sm:p-10 rounded-3xl bg-stone-900 border-2 border-amber-400/80 relative shadow-2xl shadow-amber-400/5">
+                    <div class="absolute -top-3.5 right-8 px-4 py-1 rounded-full bg-amber-400 text-stone-950 text-[11px] font-bold uppercase tracking-wider">
+                        Most Requested
+                    </div>
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-amber-400 font-medium">Collection II</span>
+                        <h3 class="font-serif text-2xl text-stone-100 mt-2">Editorial &amp; Elopement</h3>
+                        <div class="mt-4 flex items-baseline gap-2">
+                            <span class="font-serif text-4xl text-stone-50">$1,850</span>
+                            <span class="text-sm text-stone-400">/ half-day</span>
+                        </div>
+                        <p class="text-sm text-stone-400 mt-4 pb-6 border-b border-stone-800">
+                            Designed for intimate elopements, boutique brand campaigns, and architectural shoots.
+                        </p>
+                        <ul class="mt-6 space-y-4 text-sm text-stone-200">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
+                                <span>Up to 5 hours of coverage across 2 locations</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
+                                <span>Pre-shoot scouting &amp; lighting timeline plan</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
+                                <span>180+ edited full-resolution digital negatives</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
+                                <span>48-hour sneak peek gallery (20 curated frames)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
+                                <span>Two 8×10" fine-art archival cotton prints</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#contact" data-package="Editorial & Elopement ($1,850)" class="select-package-btn mt-8 block w-full py-3.5 px-6 rounded-full text-center text-sm font-semibold bg-amber-400 text-stone-950 hover:bg-amber-300 transition-colors">
+                        Reserve This Collection
+                    </a>
+                </div>
+
+                <!-- Package 3: Full-Day Heirloom -->
+                <div class="flex flex-col justify-between p-8 sm:p-10 rounded-3xl bg-stone-900/80 border border-stone-800">
+                    <div>
+                        <span class="text-xs uppercase tracking-widest text-stone-400 font-medium">Collection III</span>
+                        <h3 class="font-serif text-2xl text-stone-100 mt-2">The Heirloom Monograph</h3>
+                        <div class="mt-4 flex items-baseline gap-2">
+                            <span class="font-serif text-4xl text-stone-50">$3,600</span>
+                            <span class="text-sm text-stone-400">/ full day</span>
+                        </div>
+                        <p class="text-sm text-stone-400 mt-4 pb-6 border-b border-stone-800">
+                            Complete documentary coverage for full-scale weddings and commercial productions.
+                        </p>
+                        <ul class="mt-6 space-y-4 text-sm text-stone-300">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
+                                <span>10 hours coverage + second associate photographer</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
+                                <span>Complimentary 90-minute engagement session</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
+                                <span>500+ master-graded images in print &amp; web resolution</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
+                                <span>Handcrafted 40-page linen-bound heirloom album</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#contact" data-package="The Heirloom Monograph ($3,600)" class="select-package-btn mt-8 block w-full py-3.5 px-6 rounded-full text-center text-sm font-semibold border border-stone-700 text-stone-100 hover:bg-stone-800 transition-colors">
+                        Inquire for Full Day
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT & BOOKING SECTION ==================== -->
+    <section id="contact" class="py-24 sm:py-32 bg-stone-950 border-t border-stone-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                
+                <!-- Left Column: Direct Contact Details -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.25em] text-amber-400 font-semibold block mb-3">Get In Touch</span>
+                        <h2 class="font-serif text-3xl sm:text-5xl text-stone-100 leading-tight">
+                            Let’s create something enduring together.
+                        </h2>
+                        <p class="text-stone-400 font-light mt-4 leading-relaxed">
+                            Share a few details about your vision, preferred dates, and location. I respond to all inquiries within 24 hours.
+                        </p>
+                    </div>
+
+                    <div class="space-y-5 pt-4">
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-stone-900/60 border border-stone-800/80">
+                            <div class="w-11 h-11 rounded-xl bg-stone-800 text-amber-400 flex items-center justify-center shrink-0">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <span class="text-xs text-stone-400 block">Studio Email</span>
+                                <span id="studio-email" class="text-sm sm:text-base text-stone-100 font-medium truncate block">studio@julianvance.photo</span>
+                            </div>
+                            <button id="copy-email-btn" type="button" title="Copy Email Address" class="px-3 py-2 rounded-lg bg-stone-800 hover:bg-stone-700 text-xs text-stone-300 transition-colors shrink-0">
+                                Copy
+                            </button>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-stone-900/60 border border-stone-800/80">
+                            <div class="w-11 h-11 rounded-xl bg-stone-800 text-amber-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-stone-400 block">Direct Telephone</span>
+                                <span class="text-sm sm:text-base text-stone-100 font-medium">+1 (503) 555-0194</span>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-stone-900/60 border border-stone-800/80">
+                            <div class="w-11 h-11 rounded-xl bg-stone-800 text-amber-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-stone-400 block">Home Studio</span>
+                                <span class="text-sm sm:text-base text-stone-100 font-medium">Pearl District, Portland, OR • Worldwide Travel</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="#contact" aria-label="Instagram" class="w-11 h-11 rounded-full bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-300 hover:text-amber-400 hover:border-amber-400/50 transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#contact" aria-label="Behance" class="w-11 h-11 rounded-full bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-300 hover:text-amber-400 hover:border-amber-400/50 transition-colors">
+                            <i class="fa-brands fa-behance"></i>
+                        </a>
+                        <a href="#contact" aria-label="Pinterest" class="w-11 h-11 rounded-full bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-300 hover:text-amber-400 hover:border-amber-400/50 transition-colors">
+                            <i class="fa-brands fa-pinterest-p"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Booking Form -->
+                <div class="lg:col-span-7">
+                    <form id="booking-form" class="p-6 sm:p-10 rounded-3xl bg-stone-900/80 border border-stone-800 space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="client-name" class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Your Name *</label>
+                                <input type="text" id="client-name" required placeholder="Camille Laurent" 
+                                       class="w-full px-4 py-3.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-amber-400 transition-colors">
+                            </div>
+                            <div>
+                                <label for="client-email" class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Email Address *</label>
+                                <input type="email" id="client-email" required placeholder="camille@example.com" 
+                                       class="w-full px-4 py-3.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-amber-400 transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="package-select" class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Interested Package</label>
+                                <select id="package-select" 
+                                        class="w-full px-4 py-3.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 focus:outline-none focus:border-amber-400 transition-colors">
+                                    <option value="The Portrait Study ($650)">The Portrait Study ($650)</option>
+                                    <option value="Editorial & Elopement ($1,850)" selected>Editorial &amp; Elopement ($1,850)</option>
+                                    <option value="The Heirloom Monograph ($3,600)">The Heirloom Monograph ($3,600)</option>
+                                    <option value="Custom Commercial / Print Inquiry">Custom Commercial / Print Inquiry</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="event-date" class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Preferred Date</label>
+                                <input type="date" id="event-date" 
+                                       class="w-full px-4 py-3.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 focus:outline-none focus:border-amber-400 transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="project-details" class="block text-xs uppercase tracking-wider text-stone-400 mb-2">Tell Me About Your Story *</label>
+                            <textarea id="project-details" rows="4" required placeholder="Share your location, aesthetic inspiration, and any questions you have..." 
+                                      class="w-full px-4 py-3.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 placeholder-stone-600 focus:outline-none focus:border-amber-400 transition-colors"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 px-8 rounded-full bg-amber-400 text-stone-950 font-semibold text-sm tracking-wide hover:bg-amber-300 transition-all shadow-lg shadow-amber-400/10">
+                            Send Inquiry
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="py-10 bg-stone-950 border-t border-stone-900 text-center sm:text-left">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+            <p>&copy; 2026 Julian Vance Photography. All rights reserved.</p>
+            <div class="flex items-center gap-6">
+                <a href="#about" class="hover:text-stone-300 transition-colors">About</a>
+                <a href="#gallery" class="hover:text-stone-300 transition-colors">Gallery</a>
+                <a href="#services" class="hover:text-stone-300 transition-colors">Services</a>
+                <a href="#packages" class="hover:text-stone-300 transition-colors">Packages</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== LIGHTBOX MODAL FOR GALLERY ==================== -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-stone-950/95 backdrop-blur-lg flex items-center justify-center p-4 sm:p-8" role="dialog" aria-modal="true">
+        <button id="close-lightbox" aria-label="Close image preview" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-stone-900 border border-stone-700 text-stone-200 hover:text-amber-400 flex items-center justify-center transition-colors">
+            <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+        <div class="max-w-4xl w-full flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="Expanded photography preview" class="max-h-[75vh] w-auto rounded-2xl shadow-2xl border border-stone-800 object-contain">
+            <div class="mt-4 text-center">
+                <span id="lightbox-category" class="text-xs uppercase tracking-widest text-amber-400 block"></span>
+                <h3 id="lightbox-title" class="font-serif text-2xl text-stone-100 mt-1"></h3>
+                <p id="lightbox-meta" class="text-sm text-stone-400 mt-1"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CUSTOM TOAST NOTIFICATION ==================== -->
+    <div id="toast-notification" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="flex items-center gap-3 px-5 py-4 rounded-2xl bg-stone-900 border border-amber-400/60 shadow-2xl text-stone-100">
+            <i class="fa-solid fa-circle-check text-amber-400 text-lg"></i>
+            <span id="toast-message" class="text-sm font-medium">Action completed!</span>
+        </div>
+    </div>
+
+    <!-- ==================== INTERACTIVE JAVASCRIPT ==================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Mobile Navigation Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // 2. Gallery Category Filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active pill styling
+                    filterButtons.forEach(b => {
+                        b.classList.remove('bg-amber-400', 'text-stone-950');
+                        b.classList.add('bg-stone-900', 'text-stone-300', 'border', 'border-stone-800');
+                    });
+                    btn.classList.remove('bg-stone-900', 'text-stone-300', 'border', 'border-stone-800');
+                    btn.classList.add('bg-amber-400', 'text-stone-950');
+
+                    const selectedFilter = btn.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        if (selectedFilter === 'all' || category === selectedFilter) {
+                            item.classList.remove('hidden');
+                        } else {
+                            item.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+
+            // 3. Lightbox Modal Preview
+            const lightboxModal = document.getElementById('lightbox-modal');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCategory = document.getElementById('lightbox-category');
+            const lightboxTitle = document.getElementById('lightbox-title');
+            const lightboxMeta = document.getElementById('lightbox-meta');
+            const closeLightbox = document.getElementById('close-lightbox');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const img = item.querySelector('img');
+                    const cat = item.querySelector('span').textContent;
+                    const title = item.querySelector('h3').textContent;
+                    const meta = item.querySelector('p').textContent;
+
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightboxCategory.textContent = cat;
+                    lightboxTitle.textContent = title;
+                    lightboxMeta.textContent = meta;
+
+                    lightboxModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            const hideLightbox = () => {
+                lightboxModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            };
+
+            closeLightbox.addEventListener('click', hideLightbox);
+            lightboxModal.addEventListener('click', (e) => {
+                if (e.target === lightboxModal) hideLightbox();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !lightboxModal.classList.contains('hidden')) {
+                    hideLightbox();
+                }
+            });
+
+            // 4. Custom Toast Notification Helper
+            const toast = document.getElementById('toast-notification');
+            const toastMessage = document.getElementById('toast-message');
+            let toastTimeout;
+
+            function showToast(message) {
+                toastMessage.textContent = message;
+                toast.classList.remove('translate-y-24', 'opacity-0');
+                clearTimeout(toastTimeout);
+                toastTimeout = setTimeout(() => {
+                    toast.classList.add('translate-y-24', 'opacity-0');
+                }, 4000);
+            }
+
+            // 5. Package Auto-Selection into Contact Form
+            const packageBtns = document.querySelectorAll('.select-package-btn');
+            const packageSelect = document.getElementById('package-select');
+
+            packageBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const pkg = btn.getAttribute('data-package');
+                    if (pkg) {
+                        packageSelect.value = pkg;
+                        showToast(`Selected "${pkg}" in the booking form.`);
+                    }
+                });
+            });
+
+            // 6. Copy Studio Email using execCommand fallback for iFrames
+            const copyEmailBtn = document.getElementById('copy-email-btn');
+            const studioEmail = document.getElementById('studio-email').textContent;
+
+            copyEmailBtn.addEventListener('click', () => {
+                try {
+                    const tempInput = document.createElement('input');
+                    tempInput.value = studioEmail;
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+                    showToast('Studio email copied to clipboard!');
+                } catch (err) {
+                    showToast('Email: ' + studioEmail);
+                }
+            });
+
+            // 7. Contact Form Submission Handler
+            const bookingForm = document.getElementById('booking-form');
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('client-name').value.trim();
+                showToast(`Thank you, ${name}! Your inquiry has been received.`);
+                bookingForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>
